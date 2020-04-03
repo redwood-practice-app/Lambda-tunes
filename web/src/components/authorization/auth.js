@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const AuthEndpoint = 'https://accounts.spotify.com/api/token'
 const clientID = 'bf79bedc80564646a92e2094fa449767'
-const redirect_uri = 'http://localhost:8910'
+const redirect_uri = 'https://peaceful-hawking-f47563.netlify.com/'
 const client_secret = '0ee8ec5b6fd14a1aa43e79eea998731f'
 const client_token = btoa(`${clientID}${client_secret}`).toString()
 
