@@ -4,7 +4,7 @@ import { navigate, routes } from '@redwoodjs/router'
 
 const AuthEndpoint = 'https://accounts.spotify.com/api/token'
 const clientID = 'bf79bedc80564646a92e2094fa449767'
-const redirect_uri = 'http://localhost:8910/'
+const redirect_uri = 'https://5e86b41906b9490007374371--peaceful-hawking-f47563.netlify.com/'
 const client_secret = '0ee8ec5b6fd14a1aa43e79eea998731f'
 
 const Auth = () => {
