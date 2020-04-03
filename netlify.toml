@@ -8,7 +8,7 @@
 
 [[redirects]]
   from = "/*"
-  to = "https://5e86b1c66b57b100064273e2--peaceful-hawking-f47563.netlify.com/"
+  to = "https://accounts.spotify.com/api/"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
