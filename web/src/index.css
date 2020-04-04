@@ -48,6 +48,35 @@ table {
 }
 
 /* LambdaTunes Styles Here */
+/* Primary Styles */
+h1{
+  font-size: 2.3em;
+  margin-bottom: 20px;
+}
+
+.wrapper{
+  margin: 10px;
+}
+
+.flexbox{
+  display: flex;
+}
+
+.vertical{
+  flex-direction: column;
+}
+
+.horizontal{
+  flex-direction: row;
+}
+
 .audio-player{
-  background: black;
+  display: none;
+}
+
+/* Custom Audio Player Styles */
+.custom-player{
+  background-color: #d7dce2;
+  height: 100px;
+  width: 350px;
 }

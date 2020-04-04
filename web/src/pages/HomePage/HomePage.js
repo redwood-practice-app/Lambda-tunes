@@ -5,9 +5,12 @@ import Search from 'src/components/search/search'
 const HomePage = () => {
   return (
     <div>
-      <h1>HomePage</h1>
-      <Auth />
-      <AudioPlayer />
+      <div className="wrapper">
+        <h1>HomePage</h1>
+        <Auth />
+        <AudioPlayer />
+        <Search />
+      </div>
     </div>
   )
 }
