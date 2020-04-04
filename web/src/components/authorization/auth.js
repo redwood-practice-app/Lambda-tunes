@@ -32,12 +32,6 @@ const Auth = () => {
     } else {
       alert('You are already logged in!')
     }
-    return (
-      <div>
-        <button onClick={authInfo}>Log in to Spotify!</button>
-        <button onClick={axiosCall}>Find top artists!</button>
-      </div>
-    )
   }
 
   return (

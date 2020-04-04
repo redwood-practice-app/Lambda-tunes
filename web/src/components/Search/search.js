@@ -28,6 +28,12 @@ const Search = () => {
       console.log(resp)
     })
 
+    return (
+      <div>
+        <button onClick={axiosCall}>Find top artists!</button>
+      </div>
+    )
+
     // axios
     //   .get('https://api.spotify.com/v1/me/top/artists', {
     //     headers: { Authorization: 'Bearer ' + hash.access_token },
@@ -36,12 +42,6 @@ const Search = () => {
     //     console.log(response)
     //   })
   }
-
-  return (
-    <div>
-      <button onClick={axiosCall}>Find top artists!</button>
-    </div>
-  )
 }
 
 export default Search
