@@ -8,38 +8,53 @@ const client_secret = '0ee8ec5b6fd14a1aa43e79eea998731f'
 const client_token = btoa(`${clientID}${client_secret}`)
 
 const Auth = () => {
-    function authenticate(){
-        const auth_url = `${AuthEndpoint} + ?client_id=${client_token}&response_type=token&redirect_uri=${redirect_uri}`
-console.log(client_token)
-        axios.post(
-            encodeURIComponent(`${AuthEndpoint}`),
-                new URLSearchParams({
-                    grant_type: "client_credentials",
-                    code: `${client_token}`,
-                    redirect_uri: `${redirect_uri}`
-                }).toString(),
-                {
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'Authorization': `Basic ${client_token}`
-                    },
-                }
-            ).then(function (response) {
-                console.log(response.data);
-            });
-
-        // axios.post(AuthEndpoint, { grant_type: 'client_credentials' }, {headers: { 'Authorization': `Basic ${clientID}:${client_secret}`, "Content-Type": "application/jsodfvbdfgn"}}).then((res) => {
-        //     console.log(res)
-
-        //     // window.location = auth_url
-        // })
+    function authInfo() {
+      const authEndpoint = 'https://accounts.spotify.com/authorize'
+      let hash = window.location.hash
+        .substring(1)
+        .split('&')
+        .reduce(function (initial, item) {
+          if (item) {
+            var parts = item.split('=')
+            initial[parts[0]] = decodeURIComponent(parts[1])
+          }
+          return initial
+        }, {})
+      const clientId = '7e2d2c8c567449da91f19267c33aa557'
+      const redirectUri = 'http://localhost:8910/'
+      const scopes = ['user-top-read']
+      if (!hash.access_token) {
+        window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+          '%20'
+        )}&response_type=token&show_dialog=true`
+      } else {
+        alert('You are already logged in!')
+      }
     }
-
+    function axiosCall() {
+      let hash = window.location.hash
+        .substring(1)
+        .split('&')
+        .reduce(function (initial, item) {
+          if (item) {
+            var parts = item.split('=')
+            initial[parts[0]] = decodeURIComponent(parts[1])
+          }
+          return initial
+        }, {})
+      axios
+        .get('https://api.spotify.com/v1/me/top/artists', {
+          headers: { Authorization: 'Bearer ' + hash.access_token },
+        })
+        .then((response) => {
+          console.log(response)
+        })
+    }
     return (
-        <div>
-            <button onClick={() => authenticate()}>Authenticate</button>
-        </div>
+      <div>
+        <button onClick={authInfo}>Log in to Spotify!</button>
+        <button onClick={axiosCall}>Find top artists!</button>
+      </div>
     )
-}
-
-export default Auth
+  }
+  export default Auth
