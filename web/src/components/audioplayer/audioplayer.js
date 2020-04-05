@@ -7,8 +7,11 @@ const AudioPlayer = () => {
         //Get player instance
         const player = document.querySelector('.audio-player')
 
+        //Set player volume
+        player.volume = 0.6 //60% volume
+
         //Set player src
-        player.src = ""
+        // player.src = ""
 
         //Play track
         player.play()

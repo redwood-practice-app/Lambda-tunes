@@ -28,10 +28,11 @@ const Search = () => {
 
     apiRequest({
       method: 'get',
-      url: 'https://api.spotify.com/v1/me/top/artists',
+      url: 'https://api.spotify.com/v1/search?q=hello%20darlin&type=track',
       headers: { Authorization: 'Bearer ' + hash.access_token }
     }, (resp) => {
       console.log(resp)
+      document.querySelector('.audio-player').src = resp.data.tracks.items[6]['preview_url']
     })
 
     // axios
