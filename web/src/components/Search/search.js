@@ -2,6 +2,9 @@ import React from 'react'
 import axios from 'axios'
 
 const Search = () => {
+  const track = ""
+
+  //API wrapper function
   function apiRequest(options, callback){
     //wrapper for all axios calls
     axios(options)
@@ -10,6 +13,7 @@ const Search = () => {
       })
   }
 
+  //Search function
   function axiosCall() {
     let hash = window.location.hash
       .substring(1)
