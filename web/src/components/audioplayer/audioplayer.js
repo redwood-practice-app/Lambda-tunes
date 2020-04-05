@@ -20,7 +20,12 @@ const AudioPlayer = () => {
     return (
         <div>
             <section className="custom-player flexbox horizontal">
-                <div className="btn-play flexbox horizontal" onClick={play}><FontAwesomeIcon icon={faPlayCircle} /></div>
+                <section className="media-info">
+                    <img alt="album art" />
+                </section>
+                <section className="btn-play flexbox horizontal">
+                    <FontAwesomeIcon icon={faPlayCircle} onClick={play} />
+                </section>
                 <audio className="audio-player" controls></audio>
             </section>
         </div>

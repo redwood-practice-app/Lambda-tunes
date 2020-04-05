@@ -32,7 +32,8 @@ const Search = () => {
       headers: { Authorization: 'Bearer ' + hash.access_token }
     }, (resp) => {
       console.log(resp)
-      document.querySelector('.audio-player').src = resp.data.tracks.items[6]['preview_url']
+      document.querySelector('.audio-player').src = resp.data.tracks.items[7]['preview_url']
+      document.querySelector('.media-info img').src = resp.data.tracks.items[7].album.images[2]['url']
     })
 
     // axios
