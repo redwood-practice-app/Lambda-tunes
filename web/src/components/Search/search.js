@@ -5,7 +5,9 @@ const Search = () => {
   function apiRequest(options, callback){
     //wrapper for all axios calls
     axios(options)
-      .then(callback())
+      .then((resp) => {
+        callback(resp)
+      })
   }
 
   function axiosCall() {
@@ -39,7 +41,7 @@ const Search = () => {
 
   return (
     <div>
-      <button onClick={axiosCall}>Find top artists!</button>
+      <button onClick={axiosCall} id="btn-search">Find top artists!</button>
     </div>
   )
 }

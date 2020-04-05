@@ -29,7 +29,7 @@ const Auth = () => {
 
   return (
     <div>
-      <button onClick={authInfo}>Log in to Spotify!</button>
+      <button onClick={authInfo} id="btn-login">Log in to Spotify!</button>
     </div>
   )
 }

@@ -74,9 +74,31 @@ h1{
   display: none;
 }
 
+/* Authentication Styles */
+#btn-login{
+  margin-bottom: 15px;
+}
+
+
+/* Search Styles */
+#btn-search{
+  margin-top: 15px;
+}
+
 /* Custom Audio Player Styles */
 .custom-player{
   background-color: #d7dce2;
   height: 100px;
   width: 350px;
+}
+
+.btn-play{
+  border: 2px solid red;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.btn-play:hover{
+  cursor: pointer;
 }
