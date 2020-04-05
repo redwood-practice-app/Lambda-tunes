@@ -20,7 +20,7 @@ const AudioPlayer = () => {
     return (
         <div>
             <section className="custom-player flexbox horizontal">
-                <section className="media-info">
+                <section className="media-info flexbox horizontal">
                     <img alt="album art" />
                 </section>
                 <section className="btn-play flexbox horizontal">
