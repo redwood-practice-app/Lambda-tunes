@@ -93,9 +93,14 @@ h1{
 }
 
 .btn-play{
-  border: 2px solid red;
-  border-radius: 50%;
+  align-self: flex-end;
+  align-items: center;
+  /* border: 2px solid red;
+  border-radius: 50%; */
   height: 30px;
+  justify-content: center;
+  margin: 0 0 10px 10px;
+  text-align: center;
   width: 30px;
 }
 
