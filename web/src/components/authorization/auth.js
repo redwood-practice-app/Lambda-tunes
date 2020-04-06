@@ -18,6 +18,7 @@ const Auth = () => {
     const redirectUri = 'http://localhost:8910/'
     const scopes = ['user-top-read']
 
+
     if (!hash.access_token) {
       window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
         '%20'
