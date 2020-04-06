@@ -1,15 +1,35 @@
 import React from 'react'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faPlayCircle } from '@fortawesome/free-solid-svg-icons'
+
 const AudioPlayer = () => {
-  return (
-    <div>
-      <audio
-        className="audio-player"
-        controls
-        src="https://p.scdn.co/mp3-preview/e3bbba328a3227e0d1095f804cd73a634de8cd04?cid=7e2d2c8c567449da91f19267c33aa557"
-      ></audio>
-    </div>
-  )
-}
+    function play(){
+        //Get player instance
+        const player = document.querySelector('.audio-player')
+
+        //Set player volume
+        player.volume = 0.6 //60% volume
+
+        //Set player src
+        // player.src = ""
+
+        //Play track
+        player.play()
+    }
+
+    return (
+        <div>
+            <section className="custom-player flexbox horizontal">
+                <section className="media-info flexbox horizontal">
+                    <img alt="album art" />
+                </section>
+                <section className="btn-play flexbox horizontal">
+                    <FontAwesomeIcon icon={faPlayCircle} onClick={play} />
+                </section>
+                <audio className="audio-player" controls></audio>
+            </section>
+        </div>
+    )
 
 export default AudioPlayer

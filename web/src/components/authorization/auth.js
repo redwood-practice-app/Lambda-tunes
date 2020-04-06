@@ -13,9 +13,12 @@ const Auth = () => {
         }
         return initial
       }, {})
+
     const clientId = '7e2d2c8c567449da91f19267c33aa557'
     const redirectUri = 'http://localhost:8910/'
     const scopes = ['user-top-read']
+
+
     if (!hash.access_token) {
       window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
         '%20'
@@ -27,7 +30,7 @@ const Auth = () => {
 
   return (
     <div>
-      <button onClick={authInfo}>Log in to Spotify!</button>
+      <button onClick={authInfo} id="btn-login">Log in to Spotify!</button>
     </div>
   )
 }
